@@ -39,7 +39,7 @@ body {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  background: url('https://www.transparenttextures.com/patterns/foggy-birds.png');
+  background: url('');
   opacity: 0.03;
   mix-blend-mode: screen;
   z-index: 0;
@@ -191,39 +191,6 @@ body.light-mode .container {
 
 .link-btn:hover i {
   transform: scale(1.2) rotate(5deg);
-}
-
-.toggle-mode {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 10;
-}
-
-.toggle-mode input {
-  display: none;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 25px;
-  background-color: #ccc;
-  border-radius: 25px;
-  cursor: pointer;
-}
-
-.switch::after {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 21px;
-  height: 21px;
-  background-color: white;
-  border-radius: 50%;
-  transition: 0.3s;
 }
 
 input:checked + .switch {
