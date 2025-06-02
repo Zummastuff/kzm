@@ -6,189 +6,22 @@
   <title>Zummastuff</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-color: #4cc9f0;
-      --bg-dark: #0b0c1a;
-      --text-dark: #ffffff;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      min-height: 100vh;
-      background: var(--bg-dark);
-      color: var(--text-dark);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: background 0.5s, color 0.5s;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .overlay-fog {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      background: url('');
-      opacity: 0.3;
-      mix-blend-mode: screen;
-      z-index: 0;
-    }
-
-    .parallax-bg {
-      background: linear-gradient(135deg, #12172c, #0e1323);
-      background-size: 400% 400%;
-      position: fixed;
-      width: 200%;
-      height: 200%;
-      animation: moveBg 60s linear infinite;
-      z-index: -2;
-      top: -50%;
-      left: -50%;
-    }
-
-    @keyframes moveBg {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .container {
-  z-index: 2;
-  width: 90%;
-  max-width: 800px;
-  background: rgba(10, 10, 20, 0.85);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-
-  /* Animasi muncul dan mengambang */
-  animation: fadeInContainer 1.2s ease forwards, floatBox 4s ease-in-out infinite alternate;
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid var(--primary-color);
-      margin-bottom: 20px;
-      transition: transform 0.4s ease;
-    }
-
-    .profile-img:hover {
-      transform: scale(1.05);
-    }
-
-    .fade-title {
-      font-size: 2.5rem;
-      color: var(--primary-color);
-      opacity: 0;
-      transform: scale(0.9);
-      animation: fadeZoom 1.5s ease forwards;
-    }
-
-    @keyframes fadeZoom {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin: 30px 0;
-    }
-
-    .link-btn {
-      padding: 15px 25px;
-      border-radius: 50px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      border: none;
-      cursor: pointer;
-      font-size: 1.1rem;
-    }
-
-    .github {
-      background: #24292e;
-    }
-
-    .saweria {
-      background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-      color: #333;
-    }
-
-    .whatsapp {
-      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-    }
-
-.shopee {
-  background: linear-gradient(135deg, #ff5722 0%, #ff7043 100%);
-}
-
-
-    .link-btn:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 10px 25px rgba(76, 201, 240, 0.3);
-    }
-
-    .link-btn i {
-      transition: transform 0.3s ease;
-    }
-
-    .link-btn:hover i {
-      transform: scale(1.2) rotate(5deg);
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 20px;
-      }
-
-      .profile-img {
-        width: 120px;
-        height: 120px;
-      }
-
-      .fade-title {
-        font-size: 2rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="parallax-bg"></div>
   <div class="overlay-fog"></div>
 
+  <div class="toggle-mode">
+    <label>
+      <input type="checkbox" id="modeToggle" />
+      <span class="switch"></span>
+    </label>
+  </div>
+
   <div class="container">
     <div class="profile">
-      <img src="profile.jpeg" alt="Profile" class="profile-img" id="profile-img">
+      <img src="profile.jpg" alt="Profile" class="profile-img" id="profile-img">
       <h1 class="fade-title">Zummastuff</h1>
       <p>nobody</p>
     </div>
@@ -203,13 +36,22 @@
       <a href="https://tako.id/Zummastuff" target="_blank" class="link-btn saweria">
         <i class="fas fa-coffee"></i> Support Me
       </a>
-<a href="https://collshp.com/kzmma" target="_blank" class="link-btn shopee">
-  <i class="fas fa-store"></i> Shopee
-</a>
-
+      <a href="https://collshp.com/kzmma" target="_blank" class="link-btn shopee">
+        <i class="fas fa-store"></i> Shop on Shopee
+      </a>
     </div>
   </div>
 
-  
+  <script>
+    document.getElementById('profile-img').addEventListener('click', function (e) {
+      e.preventDefault();
+      const newImg = prompt('Masukkan URL gambar baru:');
+      if (newImg) this.src = newImg;
+    });
+
+    document.getElementById('modeToggle').addEventListener('change', function () {
+      document.body.classList.toggle('light-mode');
+    });
+  </script>
 </body>
 </html>
