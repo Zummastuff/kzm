@@ -20,6 +20,19 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+.container {
+  animation: containerFloat 8s ease-in-out infinite alternate;
+}
+
+@keyframes containerFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
 }
 
 .profile-img, .fade-title, .links a {
