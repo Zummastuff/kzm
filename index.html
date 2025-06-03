@@ -240,7 +240,7 @@
 
   <div class="container">
     <div class="profile">
-      <img src="profile.jpg" alt="Profile" class="profile-img" id="profile-img">
+      <img src="profile.jpeg" alt="Profile" class="profile-img" id="profile-img">
       <h1 class="fade-title">Zummastuff</h1>
       <p>nobody</p>
     </div>
@@ -261,12 +261,6 @@
     </div>
   </div>
 
-  <script>
-    document.getElementById('profile-img').addEventListener('click', function (e) {
-      e.preventDefault();
-      const newImg = prompt('Masukkan URL gambar baru:');
-      if (newImg) this.src = newImg;
-    });
 
     document.getElementById('modeToggle').addEventListener('change', function () {
       document.body.classList.toggle('light-mode');
